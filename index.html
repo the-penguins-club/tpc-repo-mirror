@@ -1,0 +1,129 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+	<title>Mirror of some org</title>
+	<style>
+		body {
+			background-color: #eee;
+			color: #222;
+			margin: 0;
+			padding: 20px;
+			text-align: center;
+			line-height: 1.35em;
+			font-family: 'Roboto', sans-serif;
+		}
+
+		h1, h2, h3 {
+			font-weight: normal;
+			margin: 10px 0;
+		}
+
+		code {
+			color: rgba(0, 126, 192);
+			background-color: #e6e6e6;
+			padding: 2px 5px;
+			border-radius: 3px;
+		}
+
+		.code-snippet {
+			margin: 15px;
+		}
+		.code-snippet button {
+			background-color: rgba(0, 126, 192);
+			border: 1px solid rgba(0, 126, 192);
+			color: #eee;
+		}
+		.code-snippet button:hover {
+			cursor: pointer;
+			text-decoration: underline;
+		}
+		.code-snippet input {
+			border: 1px solid rgba(0, 126, 192);
+			background-color: #f8f8f8;
+			color: rgba(0, 126, 192);
+			border-radius: 0;
+		}
+		.code-snippet button, .code-snippet input {
+			padding: 10px 13px;
+		}
+
+		ul {
+			padding-left: 20px;
+		}
+
+		footer {
+			padding: 20px;
+		}
+
+		.centered {
+			display: flex;
+			vertical-align: middle;
+			justify-content: center;
+		}
+
+		.container {
+			background-color: #fafafa;
+			text-align: left;
+			padding: 25px 37px;
+			margin: 10px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.1);
+			border-radius: 3px;
+		}
+
+	</style>
+</head>
+<body>
+
+	<noscript> You living in the 90s? </noscript>
+
+	<h1 style="margin:20px 0;">Mirror provided by <b>sample.org</b></h1>
+
+	<div class="centered">
+		<div class="container">
+			<h3>To enable this repository on your device:</h3>
+			<ul>
+				<li>
+					Copy this URL below:
+					<div class="code-snippet">
+						<input id="url" readonly></input>
+						<button onclick="copy()">Copy</button>
+						<script>
+							const URL="https://mirror.example.com/ubuntu/$release";
+							document.getElementById("url").value = URL;
+							function copy()
+							{
+								navigator.clipboard.writeText(URL);
+								window.alert("This URL is copied to your clipboard!");
+							}
+						</script>
+					</div>
+				</li>
+				<li>
+					Append the url to your <code>/etc/apt/source</code> file
+				</li>
+				<li>
+					Refresh your mirrors
+				</li>
+			</ul>
+			<p>
+				Now you should be good to go
+			</p>
+		</div>
+	</div>
+
+	<footer>
+		<p>
+			This is maintained by <b>sample.org</b><br>
+			And this server is actively being donated to by <i>Mr. Mega Heart Donor</i>
+		</p>
+	</footer>
+
+</body>
+
+</html>
